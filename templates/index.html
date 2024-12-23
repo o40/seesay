@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.socket.io/4.0.1/socket.io.min.js"></script>
+</head>
+<body>
+    <div id="messagebox"></div>
+    <script>
+        const socket = io("<YOUR HOST>:80");
+
+        socket.on('new_description', function(data) {
+            const messagebox = document.getElementById('messagebox');
+            if (data["message"]) {
+                messagebox.textContent = data["message"];
+            }
+        });
+    </script>
+</body>
+</html>
