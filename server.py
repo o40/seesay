@@ -60,16 +60,7 @@ def _base64_encode_image(image):
 def _get_description_from_image(image):
     base64_image = _base64_encode_image(image)
 
-    # TODO: Optimize prompt to reduce fluff (use test.py)
-
-    # prompt = "Start with the main subject or scene. "
-    # prompt += "List key objects using brief, descriptive phrases. "
-    # prompt += "Use spatial prepositions to indicate locations. "
-    # prompt += "Employ concise modifiers for essential details. "
-
-    prompt = "What’s in this scene and where? Less text is better."
-
-    # prompt = "Describe the scene for blind person less text is better"
+    prompt = "Give a short description of the image and where objects are located in the image. Do not mention that this is an image. Do not mention weather or geographical location. Less text is better."
 
     response = client.chat.completions.create(
         model="gpt-4o-mini",
