@@ -1,12 +1,18 @@
 # Introduction
 
-I wanted to see if I could create a low-cost tool for the blind to get  live description of the scene in front of a camera. Since I was going for low cost (<30$), and wanted to learn more about software development on arduino, I bought a ESP32-CAM with built-in WiFi to capture the actual images.
+I wanted to see if I could create a low-cost tool for the blind to get live description of the scene in front of a camera.
 
-To actually describe the image I selected the gpt-4o-mini model. I didnt think much about which model to use, but this seemed like a good start.
+The idea is to have images taken at a set interval, which then is described using an AI model, and read back to the user using voice synthesis.
 
-The proof-of-concept solution actually works, but is nowhere near to be a real product since it requires the cell-phone to have a browser opened to a specific page to read the audio descriptions that are updated on a web page.
+Since I was going for low cost (<30$), and wanted to learn more about software development on arduino, I bought a ESP32-CAM with built-in WiFi to capture the images.
 
-Security is also not really considered in this project.
+To describe the image I selected the gpt-4o-mini model. I didn't think much about which model to use, but this seemed like a good start.
+
+The proof-of-concept solution works, but has some short-comings.
+
+* The cell-phone needs to have a web page open where the descriptions are updated, to have it read back.
+* The camera/powerbank currently needs to be held in hands, and is not easy to mount. Having the camera in glasses would be optimal.
+* Security is not considered for this PoC, so anyone can access the web page if they know the URL.
 
 ## Alternatives
 
@@ -16,7 +22,7 @@ One driving force for creating this tool is how expensive the alternatives are. 
 | Product  | Price   | Comment |
 |----------|---------|---------|
 | Ray-Ban Meta Glasses | $300 | No app available for visual descriptions (yet). Closed API. Can maybe be hacked.|
-| EchoVision Smart Glasses | $599 | Interesting product that I need to investigate more | 
+| EchoVision Smart Glasses | $599 | Interesting product that I need to investigate more |
 | Envision Glasses | $3200 | Google Glass Enterprise Edition 2 hardware |
 | OrCam MyEye | $5900 | Clunky solution that you attach to glasses |
 
@@ -89,7 +95,7 @@ Updated to a longer prompt to reduce "fluff" in the descriptions.
 
 Prompt: "Give a short description of the image and where objects are located in the image. Do not mention that this is an image. Do not mention weather or geographical location. Less text is better."
 
-The descriptions became much better and is sometimes useful, but the prompt can be improved for sure. Due to what I think is the low quality of the camera the descriptions are more "gloomy" than they actually are.
+The descriptions became much better and is sometimes useful, but the prompt can be improved for sure. Due to what I think is the low quality of the camera the descriptions are more "gloomy" than they are.
 
 The API cost for the ~25 minute walk was $0.23 where one image was describes every 7 seconds.
 
@@ -118,3 +124,13 @@ The API cost for the ~25 minute walk was $0.23 where one image was describes eve
 ### Log
 
 [Full log](test_2.txt)
+
+# What now?
+
+I reached my goals of learning more about arduino development, and what can be done with low quality images in combination with an AI image description service.
+
+A productified version of this would be beneficial for the vision impaired for sure.
+
+If I find glasses with an open API that is capable of continuously providing images like in this project (but with higher quality), then I would be interested in continuing development of a solution like this. Even if it is only for own use and not for productifying/selling.
+
+Feel free to message me to discuss the project or suggest hardware that can do what I want.
