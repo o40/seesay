@@ -71,176 +71,50 @@ If you only want to test prompts for the description of the image, test.py can b
 
 The first test was somewhat successful. The camera updated every 10 seconds and descriptions was pushed to the page as expected. However the descriptions contained a lot that is not interesting in this context. For example weather and guessing where the location is.
 
+Prompt: "What’s in this scene and where? Less text is better."
+
+### Examples
+
 *"The scene shows a park area with a sign reading "Aseparken." There are trees and a pathway, likely in a semi-urban or rural location. The weather appears overcast."*
 
 ![Image](images/2024-12-28_142000.276.jpg)
 
-<details>
-  <summary>Log</summary>
-The scene depicts a residential area with low-rise buildings and trees. There’s a pathway in the foreground leading towards the houses, which appear to be set in a green, open space. The environment looks suburban and possibly in a northern climate, given the bare trees.
+### Log
 
-The scene shows a pathway lined with trees, leading towards a figure walking. There's grass to one side, and a bench is visible in the background. The setting appears to be a park or a recreational area.
+[Full log](test_1.txt)
 
-The scene shows a path lined with bare trees, leading past buildings. It's likely an urban or suburban park area on a cloudy day.
+## Second test
 
-The scene shows a wet, deserted road lined with trees and apartment buildings. It's likely an urban area, possibly in a residential neighborhood. The weather appears gloomy.
+Updated to a longer prompt to reduce "fluff" in the descriptions.
 
-A cloudy, gray day in a residential area. There are buildings along the left side, a pathway, and trees nearby. The scene looks quiet and somewhat empty.
+Prompt: "Give a short description of the image and where objects are located in the image. Do not mention that this is an image. Do not mention weather or geographical location. Less text is better."
 
-The scene shows a wet pathway with a green trash bin on the side, lined by trees and buildings in the background. The atmosphere appears cloudy and gloomy. It looks like a residential area.
+The descriptions became much better and is sometimes useful, but the prompt can be improved for sure. Due to what I think is the low quality of the camera the descriptions are more "gloomy" than they actually are.
 
-The scene shows a pathway beside residential buildings, with bare trees on either side and a gray sky. It appears to be a suburban area, possibly in a northern climate.
+The API cost for the ~25 minute walk was $0.23 where one image was describes every 7 seconds.
 
-The scene shows a pathway bordered by trees and two residential buildings. It's overcast and possibly rainy, indicating a suburban or urban area.
+### Examples
 
-The scene shows a wet, empty path beside a building, with trees lining the area. It appears to be a residential neighborhood, possibly in a city. The weather is cloudy and overcast.
+*"A pathway extends ahead, flanked by trees on both sides. To the left, a bench is positioned alongside the path. There is a slight curve in the path leading into the distance."*
 
-The scene shows a pathway beside a building in a mostly residential area. There are trees nearby, and the ground appears wet, indicating recent rain. The overall mood is gloomy and overcast.
+![Image](images/2024-12-31_114137.446.jpg)
 
-The scene shows a narrow, wet pathway surrounded by trees and residential buildings. It appears to be an urban area, possibly a park or a public walking area. The weather looks overcast.
+*"A grassy slope is in the background, with pathways leading to a fork on the left and right. On the left side, there’s a signpost. In the foreground, there is a small object lying on the ground. A building is visible on the right side."*
 
-The scene features a wavy, metal sculpture or playground equipment in a grassy area with a tree nearby. In the background, there are residential buildings. The setting appears to be a park or playground.
+![Image](images/2024-12-31_114646.763.jpg)
 
-The scene shows a wet, asphalt path or road next to a building with a few trees. It appears to be an urban or suburban area.
+*"A pathway runs through the center, with grass on both sides. Toward the far left, a person is near the edge of the grass. In the background, there are vehicles and a few trees on the left. A sign structure is visible on the right side."*
 
-The scene shows a residential area with a road and apartment buildings. It's overcast and possibly rainy, suggesting a suburban environment.
+![Image](images/2024-12-31_115126.815.jpg)
 
-The scene shows a residential area with a multi-story apartment building on the left, a road leading into the distance, and some trees or shrubs on the right. The weather appears overcast, possibly wet.
+"*A person walks on a path holding the handle of a stroller. Another individual walks alongside them. To the left, there are trees, and a light pole stands beside the path. In the background, there are grassy areas and some structures."*
 
-The scene shows a gray sky, a pathway, and tall buildings on either side, likely in an urban area. The lighting appears dull, suggesting a cloudy or gloomy day.
+![Image](images/2024-12-31_115306.805.jpg)
 
-The scene shows a gloomy outdoor pathway lined with trees, leading towards buildings in the background. It appears to be an urban area, possibly a town or city. The weather looks overcast.
+*"A dirt path leads into a grassy area, flanked by trees. To the left, there are two magpies on the ground. In the background, a brick building is visible, with additional structures further down the path on the right side. The scene has a sparse, open feel."*
 
-The scene shows a gray apartment building next to a bare tree, with an overcast sky. It's an urban environment, likely a residential area. The ground is wet, suggesting recent rain.
+![Image](images/2024-12-31_115508.385.jpg)
 
-The scene shows a gray multi-story building, a street sign, and a yellow building in the background. It appears to be in a residential or urban area, likely in a colder climate due to the overcast sky.
+### Log
 
-The scene shows a park area with a sign reading "Aseparken." There are trees and a pathway, likely in a semi-urban or rural location. The weather appears overcast.
-
-The scene shows a pathway next to a grassy area with trees on either side. There are buildings in the background, likely stables or a farm. The setting appears to be rural or semi-rural, possibly a park or farm area.
-
-The scene shows a pathway splitting into two directions. There are trees on the left and a building visible in the background, possibly a playground or park area. The setting appears to be outdoors, likely in a park or recreational area.
-
-The scene shows a pathway with a cyclist riding, trees without leaves, and a building in the background. It appears to be a public area, possibly in a park or recreational pathway. The weather looks cloudy or overcast.
-
-The scene shows a winding road with a grassy area and trees, likely in a park or rural setting. The weather appears overcast or rainy.
-
-The scene shows a path winding through a grassy area with trees and a light pole. It appears to be a park or recreational area, likely during overcast weather.
-
-A winding pathway through a park with a large tree and bare branches, surrounded by grass and smaller trees in a cloudy setting.
-
-The scene shows a grassy field under a cloudy sky with trees in the background. There is a structure or frame on the right side. The overall setting seems to be outdoors, possibly a park or open area.
-
-The scene shows a grassy area with some trees and a building in the background, likely a residential or institutional structure. The setting appears to be outdoors, possibly in a park or near a campus.
-
-The scene shows a grassy area with some trees and a building in the background. The lighting suggests it may be early morning or late afternoon. The location appears to be a park or open space near residential buildings.
-
-The scene shows a picnic table in a grassy area, surrounded by sparse trees and an open landscape. It appears to be an outdoor park or field.
-
-The scene depicts a pathway leading through a grassy area with trees and bushes on one side. There’s a picnic table visible on the left. The atmosphere appears overcast. 
-
-The scene shows a pathway through a grassy area with trees on the left and a light pole on the right. The sky is overcast. The location appears to be a park or open space.
-
-The scene shows a grassy area with a path, trees in the background, and a lamppost. It appears to be an outdoor park or open space on a cloudy day.
-
-The scene shows a grassy area with a tall light pole, a stone structure, and trees in the background. The sky is overcast. Location is unclear.
-
-The scene shows a pathway winding through a grassy area with trees on either side. In the background, there are buildings, likely residential, indicating a suburban setting.
-
-The scene shows a pathway in a park or campus with trees and buildings in the background. A person in a light-colored outfit walks along the path, likely on a cloudy day.
-
-The scene shows a winding pathway in a residential area, flanked by trees and buildings. It appears to be a quiet, possibly suburban setting. The weather looks overcast.
-
-A person in a white coat walking a dog along a wet path, surrounded by trees and buildings. The setting appears to be a residential area or campus.
-
-The scene shows a pathway beside a grassy area and brick buildings, likely residential. It appears to be a gray, possibly rainy day.
-
-The scene appears blurry and shows a partial view of a surface, possibly a floor or table, with a hand or finger visible in the foreground. The exact location is unclear.
-
-The image is unclear, showing abstract colors and shapes without any distinct objects or identifiable features. The setting is indeterminate.
-
-The scene shows a winding path through a grassy area with a few trees and buildings in the background. The setting appears to be an urban environment, possibly a park or residential area, on an overcast day.
-
-The scene shows a cloudy day with a pathway leading through grass, flanked by residential buildings. Trees are present, and there's a sign visible. The location appears to be an urban residential area, possibly in a Scandinavian country due to the architecture.
-
-The scene shows a residential area with low-rise apartment buildings, a wet road, and some greenery. The weather appears cloudy. Location specifics are unclear.
-
-The scene shows street signs pointing in different directions, with a cloudy sky above. There's a building in the foreground, likely in an urban area. The exact location isn't identifiable from the image.
-
-The scene shows a wet, winding road with a tree on the left and buildings in the background. It appears to be an urban or suburban area with a nearby entrance or barrier.
-
-The scene shows a narrow street with a tall brown wall on one side and buildings on the other. It's cloudy, and the ground appears wet, suggesting recent rain. The location appears urban but specific details about the area are not discernible.
-
-The scene shows a wet, possibly residential area with a pathway leading to a building. There’s a tree and some people walking. The weather is overcast.
-
-The scene shows a storefront with bikes parked outside. It's wet, likely after rain, and features a person walking. The location seems urban, possibly a shop or convenience store.
-
-The scene shows a partially flooded area in front of a multi-story building. There's a railing and an entrance visible, possibly to a commercial space. The setting appears to be urban or suburban, likely in a temperate climate.
-
-The scene shows a paved walkway next to a modern building and a bare tree. It appears to be an urban environment, possibly a park or campus area. The weather looks overcast.
-
-The scene shows a paved area near a building, likely a public place, with a few people in the distance. There are trees and some street lighting visible. It appears to be an overcast day.
-
-The scene shows a close-up of tiled flooring and a shoe. The setting appears to be indoors, possibly in a public space like a hallway or corridor.
-
-The scene shows a gray, overcast day with dense bushes and trees lining a bend in the road. A building can be seen in the background.
-
-The scene shows a park pathway with a wooden pergola overhead, surrounded by trees and greenery. The atmosphere appears calm and natural.
-
-The scene shows a covered walkway with wooden beams, leading to a grassy area. In the background, there are residential buildings. Some items are scattered on the ground alongside the path.
-
-The scene shows a park-like area with a pathway, bare trees, and some picnic tables. There are buildings in the background, suggesting a residential or recreational space. The atmosphere appears overcast.
-
-The scene shows a park with a path leading through it. There are bare trees, benches, and a trash can. The setting appears to be a residential area, likely during cool weather.
-
-The scene shows a path or road with grass on either side. It appears to be outdoors, possibly in a park or rural area. The image is tilted.
-
-The scene shows a park or playground area with a couple of residential buildings in the background. There's a tree, a flagpole, and what appears to be some outdoor furniture, like a bench, in the foreground. The setting looks urban and possibly in an area with a cooler climate.
-
-The scene shows a walkway leading through a residential area with two apartment buildings on either side, bare trees, and some benches visible. The setting appears to be a suburban neighborhood.
-
-The scene shows a residential area with two multi-story apartment buildings. There's a road curving around, lined with low bushes and trees. The setting appears urban, likely in a suburban neighborhood.
-
-The scene shows a gloomy, overcast path lined with bare trees. It appears to be a quiet, possibly rural area.
-
-The scene features a gray, overcast day with bare trees lining a path. A person is walking along a road on the right side. It appears to be a rural or suburban area.
-
-The scene shows a wet, empty pathway in a park with benches, trees, and residential buildings in the background. It appears to be a cloudy or overcast day.
-
-The scene shows a pathway in a park or open area alongside some buildings. There are trees on either side and a grassy area. It's overcast, suggesting a cloudy day.
-
-The scene shows a cloudy pathway lined with trees and buildings in the background. It appears to be a residential area, likely in an urban or suburban setting.
-
-The scene depicts a walkway with trees on either side and a multi-story building in the background. The weather appears overcast, suggesting a cloudy day. The location seems to be a residential area.
-
-The scene shows a pathway with trees on either side and buildings in the background. It appears to be a quiet, possibly urban park area on a cloudy day.
-
-The scene shows three white birch trees in a grassy area, with a building in the background. The sky appears overcast.
-
-The scene shows a pathway lined with trees, leading through a residential area with buildings on the right. The sky appears overcast, indicating a potentially dreary day.
-
-The scene shows a pathway lined with trees, leading through a grassy area. On one side, there is a building, likely a residential block. It appears to be a calm, park-like setting.
-
-The scene shows a grassy area with bare trees and a building in the background. It appears to be an outdoor residential area, possibly in a suburban setting.
-
-The scene shows a residential area with a multi-story apartment building, some grassy space, and a gated entrance. It appears to be a suburban or urban environment, possibly in a European context.
-
-The scene shows a tree-lined pathway in a park or residential area. It appears to be cloudy or overcast. A building is visible in the background.
-
-The scene depicts a path surrounded by trees, leading toward a building. It's a park-like environment with grass and few benches. The sky appears overcast, indicating a cloudy day.
-
-The scene shows a pathway lined with trees and grass, likely in a park. It's cloudy and possibly rainy, suggesting a dreary atmosphere. There are buildings visible in the background.
-
-The scene shows a gray residential building with balconies, a tree, bicycles, and a trailer in the courtyard. The setting appears to be urban, possibly in a European city.
-
-The scene shows the entrance to a building, specifically door number XX. The door is made of glass and has a simple design. No specific location is indicated.
-
-The scene shows a dimly lit hallway with stairs on the left and mailboxes along the right wall. It's likely in a residential building or apartment complex.
-
-The scene shows an elevator at a building entrance. The elevator doors are closed, and there's a call button panel beside them. The wall has a simple design with a light-colored section and a dark section.
-
-The scene shows part of an elevator with a metal panel and a wall. It appears to be the interior of a building, likely an elevator shaft or cabin.
-
-The scene shows a flat, white surface with a metallic edge. It appears to be indoors, possibly in an office or kitchen setting.
-
-</details>
+[Full log](test_2.txt)
