@@ -13,12 +13,12 @@ const char *password = "<YOUR PASSWORD>";
 const char *httpPostServer = "http://<YOUR HTTP SERVER IP:PORT>/upload";
 
 
-void setupLedFlash(int pin) {
-#if CONFIG_LED_ILLUMINATOR_ENABLED
-  ledcAttach(pin, 5000, 8);
-#else
-  log_i("LED flash is disabled -> CONFIG_LED_ILLUMINATOR_ENABLED = 0");
-#endif
+void blink()
+{
+    Serial.println("Blinking led");
+    digitalWrite(LED_GPIO_NUM, HIGH);
+    delay(1);
+    digitalWrite(LED_GPIO_NUM, LOW);
 }
 
 void setup() {
@@ -69,15 +69,8 @@ void setup() {
   } else {
     // Best option for face detection/recognition
     config.frame_size = FRAMESIZE_240X240;
-#if CONFIG_IDF_TARGET_ESP32S3
-    config.fb_count = 2;
-#endif
   }
 
-#if defined(CAMERA_MODEL_ESP_EYE)
-  pinMode(13, INPUT_PULLUP);
-  pinMode(14, INPUT_PULLUP);
-#endif
 
   // camera init
   esp_err_t err = esp_camera_init(&config);
@@ -98,19 +91,7 @@ void setup() {
     s->set_framesize(s, FRAMESIZE_QVGA);
   }
 
-#if defined(CAMERA_MODEL_M5STACK_WIDE) || defined(CAMERA_MODEL_M5STACK_ESP32CAM)
-  s->set_vflip(s, 1);
-  s->set_hmirror(s, 1);
-#endif
-
-#if defined(CAMERA_MODEL_ESP32S3_EYE)
-  s->set_vflip(s, 1);
-#endif
-
-// Setup LED FLash if LED pin is defined in camera_pins.h
-#if defined(LED_GPIO_NUM)
-  setupLedFlash(LED_GPIO_NUM);
-#endif
+  pinMode(LED_GPIO_NUM, OUTPUT);
 
   WiFi.mode(WIFI_STA);
   WiFi.begin(ssid, password);
@@ -124,7 +105,7 @@ void setup() {
   Serial.println("WiFi connected");
 }
 
-void uploadImage(uint8_t *imageData, size_t len) {    
+void uploadImage(uint8_t *imageData, size_t len) {
     // WiFiClient for HTTP request
     WiFiClient client;
     HTTPClient http;
@@ -147,8 +128,9 @@ void uploadImage(uint8_t *imageData, size_t len) {
 
 void loop() {
   Serial.println("Capture image");
-  
-  camera_fb_t * fb = esp_camera_fb_get();  
+
+  blink();
+  camera_fb_t * fb = esp_camera_fb_get();
   if (!fb) {
     Serial.println("Camera capture failed");
     return;
@@ -157,8 +139,8 @@ void loop() {
   // Upload the image
   Serial.printf("Uploading image: %d bytes\n", fb->len);
   uploadImage(fb->buf, fb->len);
-    
+
   // Return the frame buffer back to the driver
   esp_camera_fb_return(fb);
-  delay(10000);
+  delay(7000);
 }
